@@ -6,10 +6,11 @@ class DB_Connection {
         $username = "martin";
         $password = "Mackomace1!";
         $dbname = "school_board";
-        $conn = mysqli_connect($host,$username,$password,$dbname);
-        if (!$conn) {
-            die("Connection failed: " . mysqli_connect_error());
+
+        try {
+            return mysqli_connect($host,$username,$password,$dbname);
+        } catch(PDOException $e) {
+            die("Connection failed: " . $e->getMessage());
         }
-        return $conn;
     }
 }
