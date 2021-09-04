@@ -18,7 +18,12 @@ class DB_Student {
 
     public function find($student_id)
     {
-        $result = mysqli_query($this->conn, "SELECT * FROM student WHERE `id` = '".$student_id."'");
+        $sql = "SELECT * FROM student WHERE id = ?";
+        $stmt = $this->conn->prepare($sql);
+        $stmt->bind_param("s", $student_id);
+        $stmt->execute();
+
+        $result = $stmt->get_result();
 
         return $this->parseResult($result)[0];
     }
