@@ -39,7 +39,7 @@ include 'get_students.php';
 <!--        </div>-->
         <?php
 
-            print_r($student->response());
+            echo '<pre>', htmlentities($student->response()), '</pre>';
         ?>
     </body>
 </html>
