@@ -1,7 +1,7 @@
 <!doctype HTML>
 <?php
 include 'db_connection.php';
-require_once('classes/DB_Student.php'); ?>
+require('classes/DB_Student.php'); ?>
 <html lang="en">
     <head class="<?php echo time()?>">
         <title>School Board</title>

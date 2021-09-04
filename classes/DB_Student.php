@@ -1,12 +1,9 @@
 <?php
 
 class DB_Student {
-    public $conn;
-
     public function __construct()
     {
         include 'db_connection.php';
-        $this->conn = openCon();
     }
 
     public static function all()
