@@ -8,7 +8,15 @@ class CSMB_Student extends Student implements Board{
 
     public function finalResult()
     {
-        return $this->average() >= 8 && count($this->grades) > 2 ? 'pass' : 'fail';
+        $grades = $this->grades;
+
+        if(count($grades) > 2) {
+            // Discard the lowest grade.
+            sort($grades, SORT_NUMERIC);
+            array_shift($grades);
+        }
+
+        return $grades[count($grades) - 1] > 8 ? 'pass' : 'fail';
     }
 
     public function response()
