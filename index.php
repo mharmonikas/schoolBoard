@@ -31,9 +31,6 @@ require('classes/DB_Student.php'); ?>
                   <?php } ?>
               </tbody>
           </table>
-<!--                --><?php //print_r(DB_Student::get()) ?>
-
-
         </div>
     </body>
 </html>
