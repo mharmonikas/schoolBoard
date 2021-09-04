@@ -11,7 +11,7 @@ include 'get_student.php';
 
     <body>
         <?php
-        echo '<pre>', htmlentities($student->response()), '</pre>';
+        echo '<pre>', htmlentities($student ? $student->response() : ''), '</pre>';
         ?>
     </body>
 </html>
