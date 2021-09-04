@@ -1,6 +1,6 @@
 <?php
 class DB_Connection {
-    public function openConnection()
+    public static function connect()
     {
         $host = "localhost";
         $username = "martin";
