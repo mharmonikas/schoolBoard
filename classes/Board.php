@@ -1,4 +1,4 @@
 <?php
 interface Board {
-    public function average($grades);
+    public function average();
 }

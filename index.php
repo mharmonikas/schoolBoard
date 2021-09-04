@@ -2,10 +2,9 @@
 <?php
 ini_set('display_errors', 1);
 include 'db_connection.php';
-require('classes/DB_Student.php');
-require('classes/Student.php');
+include 'get_students.php';
 
-$student_id = $_GET['student'];
+
 ?>
 <html lang="en">
     <head class="<?php echo time()?>">
@@ -39,9 +38,8 @@ $student_id = $_GET['student'];
 <!--          </table>-->
 <!--        </div>-->
         <?php
-            $dbStudent = (new DB_Student)->find($student_id);
-            $student = new Student($dbStudent);
-            print_r($student);
+
+            print_r($student->response());
         ?>
     </body>
 </html>
