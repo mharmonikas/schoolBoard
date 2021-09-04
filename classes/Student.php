@@ -10,25 +10,18 @@ class Student {
     {
         $this->id = $dbStudent->id;
         $this->name = $dbStudent->name;
-        $this->grades = json_decode($dbStudent->grades, true);
+        $this->grades = $this->getGrades($dbStudent->grades);
         $this->average = $this->average();
     }
 
+    private function getGrades($grades)
+    {
+        $grades = json_decode($grades, true);
 
+        if(count($grades) < 1 || count($grades) > 4) {
+            die('A student can have 1 to 4 grades.');
+        }
 
-//    protected function getBoard($board)
-//    {
-//        switch ($board) {
-//            case 'csm':
-//                return new CSM_Board1();
-//            case 'csmb':
-//                return new CSMB_Board();
-//            default:
-//                die("Wrong board name.");
-//        }
-//    }
-
-//    public function getAverage(){
-//        return $this->boardClass->average($this->grades);
-//    }
+        return $grades;
+    }
 }
