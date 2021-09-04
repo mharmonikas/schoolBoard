@@ -14,7 +14,7 @@ class CSMB_Student extends Student implements Board{
     public function response()
     {
         $grades = json_encode($this->grades);
-        // Todo: needs to be xml.
+
         $response = '<id>'.$this->id.'</id>';
         $response .= '<name>'.$this->name.'</name>';
         $response .= '<grades>'.$grades.'</grades>';
